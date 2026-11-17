@@ -1,0 +1,75 @@
+# USERS
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username" : "Adi",
+    "email" : "adi@gmail.com",
+    "password" : "adi123"
+}
+
+###
+GET http://127.0.0.1:8000/users/
+Accept: application/json
+
+
+# TRIPS
+# To see all the trips of one user
+###
+GET http://127.0.0.1:8000/trips/
+Accept: application/json
+Authorization: Basic Alji:alji123
+
+###
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: Basic Alji:alji123
+
+{
+    "title":"Trip to Ooty",
+    "start_date":"2026-11-20",
+    "destination":"Ooty"
+}
+
+
+# API for TripRetrieveUpdateDeleteView
+# To see one specific trip
+###
+GET http://127.0.0.1:8000/trips/1/
+Accept: application/json
+Authorization: Basic Alji:alji123
+
+###
+PUT http://127.0.0.1:8000/trips/1/
+Content-Type: application/json
+Authorization: Basic Alji:alji123
+
+{
+    "title" : "Trip to kodaikanal",
+    "start_date" : "2026-11-20",
+    "destination" : "Kodaikanal"
+}
+
+###
+DELETE http://127.0.0.1:8000/trips/2/
+Authorization: Basic Alji:alji123
+
+
+###
+GET http://127.0.0.1:8000/trips/1/members
+Accept: application/json
+Authorization: Basic Alji:alji123
+
+###
+POST http://127.0.0.1:8000/trips/1/members
+Content-Type: application/json
+Authorization: Basic Alji:alji123
+
+{
+    "username" : "Aswin"
+}
+
+###
+DELETE http://127.0.0.1:8000/trips/1/members/1/
+Authorization: Basic Alji:alji123
